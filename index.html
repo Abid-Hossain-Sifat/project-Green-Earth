@@ -1,197 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GREEN | EARTH</title>
 
-
     <link rel="shortcut icon" href="./assets/eco-world.png" type="image/x-icon">
-    <link rel="stylesheet" href="tailwindConnect.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
 </head>
-
-<body>
+<body class="bg-gray-50">
     <header class="bg-[#15803D]">
-        <div class="flex justify-between items-center w-[80%] mx-auto py-5">
-            <h3 class="text-2xl font-bold text-[#FFFFFF]">
-                GREEN EARTH
-            </h3>
-            <ol class="flex gap-6 text-[16px] font-medium text-[#FFFFFF]">
-                <li>
-                    <a href="">
-                        About
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        Gallery
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        Plant a Tree
-                    </a>
-                </li>
+        <div class="flex justify-between items-center w-[90%] md:w-[80%] mx-auto py-5">
+            <h3 class="text-xl md:text-2xl font-bold text-white">GREEN EARTH</h3>
+            <ol class="hidden md:flex gap-6 text-[16px] font-medium text-white">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Plant a Tree</a></li>
             </ol>
-            <button class="btn btn-warning text-[16px] font-normal text-[#15803D] rounded-full">
+            <button class="btn btn-warning btn-sm md:btn-md text-[#15803D] rounded-full font-bold">
                 Plant a Tree
             </button>
         </div>
     </header>
 
-    <!-- Banner sec -->
-    <section class="bg-[#CFF0DC] flex justify-around">
-        <div>
-            <img src="./assets/hero-leaf1.png" alt="">
-        </div>
-        <div class="flex flex-col items-center py-[100px]">
-            <h2 class="text-[48px] font-bold text-[#1F2937]">
+    <section class="bg-[#CFF0DC] flex flex-col md:flex-row justify-around items-center px-5 overflow-hidden">
+        <div class="hidden md:block"><img src="./assets/hero-leaf1.png" alt=""></div>
+        <div class="flex flex-col items-center py-12 md:py-[100px] text-center">
+            <h2 class="text-3xl md:text-[48px] font-bold text-[#1F2937] leading-tight">
                 Plant a Tree, Grow a Future
             </h2>
-            <p class="text-center text-[16px] font-[400px] leading-6 text-[#1f293796] pt-2 pb-6">
-                Join our mission to plant 1 million trees and make the Earth greener for future
-                <br>generations.
+            <p class="text-[14px] md:text-[16px] text-gray-600 pt-2 pb-6 max-w-lg">
+                Join our mission to plant 1 million trees and make the Earth greener for future generations.
             </p>
-            <button class="btn btn-warning text-[16px] font-normal text-[#15803D] rounded-full">
-                Get Involved
-            </button>
+            <button class="btn btn-warning text-[#15803D] rounded-full px-8">Get Involved</button>
         </div>
-        <div>
-            <img src="./assets/hero-leaf2.png" alt="">
-        </div>
+        <div class="hidden md:block"><img src="./assets/hero-leaf2.png" alt=""></div>
     </section>
 
-    <!-- main section  -->
-    <main class="pt-[100px] w-[80%] mx-auto">
-        <h2 class="text-center text-[32px] font-semibold leading-10 text-[#1F2937]">
-            Chose Your Trees
-        </h2>
-        <div class="grid grid-cols-12 gap-8">
-
-
-            <!-- Categories  -->
-            <div class="bg-white card card-body shadow-2xl col-span-3">
-                <h2 class="text-[20px] font-semibold leading-7 text-[#000000] text-center">
-                    Categories
-                </h2>
-                <div class="space-y-3 sticky top-8">
-                    <button id="allTreesBtn" class="btn btn-wide w-full bg-[#15803D] text-white">
+    <main class="py-12 w-[95%] md:w-[80%] mx-auto">
+        <h2 class="text-center text-3xl font-bold text-[#1F2937] mb-10">Choose Your Trees</h2>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div class="bg-white card shadow-xl col-span-1 lg:col-span-3 p-5">
+                <h2 class="text-xl font-bold mb-4 text-center">Categories</h2>
+                <div id="CategoriesContainer" class="flex flex-row lg:flex-col gap-3 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0">
+                    <button id="allTreesBtn" class="btn bg-[#15803D] text-white border-none rounded-xl min-w-[120px] lg:w-full font-bold">
                         All Trees
                     </button>
-
-                    <!-- Categories container  -->
-                    <div id="CategoriesContainer" class="space-y-3">
-
-                    </div>
                 </div>
             </div>
 
+            <div class="bg-white card shadow-xl col-span-1 lg:col-span-6 p-5">
+                <div id="TreesContainer" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 overflow-y-auto max-h-[850px] pr-2">
+                    </div>
 
-            <!-- Tress  -->
-            <div class="bg-white card card-body shadow-2xl col-span-6">
-                <!-- Tress Container -->
-                <div id="TreesContainer" class="grid grid-cols-1 sm:grid-cols-6 gap-6">
-                </div>
-
-                <!-- loading spinner  -->
-                <div id="loadingSpinner" class="h-[60vh] flex hidden justify-center items-center">
-                    <span class="loading loading-dots loading-xl"></span>
+                <div id="loadingSpinner" class="h-[400px] flex hidden justify-center items-center">
+                    <span class="loading loading-dots loading-lg text-green-700"></span>
                 </div>
             </div>
 
-
-            <!-- Cart  -->
-            <div class="bg-white card card-body shadow-2xl col-span-3">
-                <h2 class="class=" font-bold text-3xl mb-2"">
-                    Cart
-                </h2>
-                <div class="space-y-4">
-                    <div id="cartContainer" class="space-y-4">
+            <div class="bg-white card shadow-xl col-span-1 lg:col-span-3 p-5 h-fit sticky top-5">
+                <h2 class="text-2xl font-bold mb-5 border-b pb-2">Cart</h2>
+                <div id="cartContainer" class="space-y-4 max-h-[400px] overflow-y-auto pr-1">
                     </div>
-
-                    <div id="emptyCartMessage" class="text-center py-4">
-                        <p>Your cart is empty</p>
-                        <p>Add trees to get started</p>
-                    </div>
-
-
-                    <!-- Total amount -->
-                    <div class="flex justify-between items-center bg-green-50 rounded-lg p-4 my-3 font-bold">
-                        <span>Total:</span>
-                        <span id="totalPrice">$0</span>
-                    </div>
-
+                <div id="emptyCartMessage" class="text-center py-10">
+                    <p class="text-gray-400">Your cart is empty</p>
                 </div>
-
+                <div class="flex justify-between items-center bg-green-50 rounded-xl p-4 mt-5 font-bold text-lg border border-green-200">
+                    <span>Total:</span>
+                    <span id="totalPrice" class="text-green-700">$0</span>
+                </div>
             </div>
-
         </div>
 
-
-        <!-- Product details modal -->
         <dialog id="treeDetailsModal" class="modal">
-            <div class="modal-box">
-
-                <!-- Modal header with close Btn -->
+            <div class="modal-box max-w-2xl">
                 <div class="flex justify-between items-start mb-4">
-                    <h3 id="modalTitle" class="font-bold text-2xl text-green-700" >Tree Details</h3>
-                    <button class="btn btn-sm btn-circle btn-ghost"
-                        onclick="document.getElementById('treeDetailsModal').close()">
-                        ✕
-                    </button>
+                    <h3 id="modalTitle" class="font-bold text-2xl text-green-800">Tree Details</h3>
+                    <form method="dialog"><button class="btn btn-sm btn-circle btn-ghost">✕</button></form>
                 </div>
-
-                <!-- Modal contnt -->
-                <div class=" gap-6">
-                    <!-- Plant img -->
-                    <img id="modalimg" src="" alt="plant" class="w-full !h-[250px] object-cover rounded-lg mb-12">
-
-                    <!-- Plant details -->
-                    <div class="">
-                        <p class="text-sm text-gray-500 mb-2">
-                            <span class="font-bold">
-                                Category:
-                            </span>
-                            <span id="modalCategory" class="badge badge-primary">
-                            </span>
-                        </p>
-                        <p class="text-sm text-gray-600 mb-4">
-                            <span id="modalDescription">
-                            </span>
-                        </p>
-                        <div class="flex items-baseline gap-2 mb-6">
-                            <span class="text-3xl font-bold text-green-600">
-                                $
-                                <span id="modalPrice">
-                                    0
-                                </span>
-                            </span>
-                        </div>
-                    </div>
+                <img id="modalimg" src="" class="w-full h-64 object-cover rounded-2xl mb-6 shadow-inner">
+                <div class="space-y-3">
+                    <p><span class="font-bold">Category:</span> <span id="modalCategory" class="badge badge-success text-white px-4"></span></p>
+                    <p id="modalDescription" class="text-gray-600 leading-relaxed"></p>
+                    <p class="text-3xl font-bold text-green-600">$<span id="modalPrice">0</span></p>
                 </div>
-
-
                 <div class="modal-action">
-                    <form method="dialog">
-                        <button class="btn">
-                            Close
-                        </button>
-                    </form>
+                    <form method="dialog"><button class="btn bg-[#15803D] text-white px-8 rounded-xl border-none">Close</button></form>
                 </div>
             </div>
         </dialog>
-
     </main>
 
     <script src="./scripts/script.js"></script>
 </body>
-
 </html>
