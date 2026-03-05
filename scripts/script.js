@@ -14,12 +14,9 @@ const emptyCartMessage = document.getElementById("emptyCartMessage");
 
 let cart = [];
 
-/**
- * 1. DYNAMIC STYLING VIA JS
- * CSS file-e hat na diye eikhan thekei scrollbar hide ar layout thik kora hoyeche.
- */
+
 function applyStyles() {
-    // Hide Scrollbar Logic
+    // Hide Scrollbar
     const style = document.createElement('style');
     style.textContent = `
         #TreesContainer::-webkit-scrollbar, #cartContainer::-webkit-scrollbar, #CategoriesContainer::-webkit-scrollbar { display: none; }
@@ -29,13 +26,13 @@ function applyStyles() {
     `;
     document.head.appendChild(style);
 
-    // Responsive Grid Setup
+    // Responsive Grid
     treesContainer.className = "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 overflow-y-auto max-h-[850px] pr-0";
     treesContainer.style.scrollBehavior = "smooth";
 }
 applyStyles();
 
-// 2. Loading Logic
+// Loading spinner
 function showLoading() {
     loadingSpinner.classList.remove("hidden");
     treesContainer.innerHTML = "";
@@ -44,7 +41,7 @@ function hideLoading() {
     loadingSpinner.classList.add("hidden");
 }
 
-// 3. Load Categories
+// Load Categories
 async function loadCategories() {
     const res = await fetch("https://openapi.programming-hero.com/api/categories");
     const data = await res.json();
@@ -57,7 +54,7 @@ async function loadCategories() {
     });
 }
 
-// 4. Select Category
+// Select Category
 async function selectCategory(categoryId, btn) {
     showLoading();
     const allButtons = document.querySelectorAll("#CategoriesContainer button, #allTreesBtn");
@@ -72,7 +69,7 @@ async function selectCategory(categoryId, btn) {
     hideLoading();
 }
 
-// All Trees Button Event
+// All Trees Button
 allTreesbtn.addEventListener("click", () => {
     const allButtons = document.querySelectorAll("#CategoriesContainer button, #allTreesBtn");
     allButtons.forEach(b => {
@@ -82,7 +79,7 @@ allTreesbtn.addEventListener("click", () => {
     loadTrees();
 });
 
-// 5. Display Trees (Lag Free)
+// Display Trees
 async function loadTrees() {
     showLoading();
     const res = await fetch("https://openapi.programming-hero.com/api/plants");
@@ -127,7 +124,7 @@ function displayTrees(trees) {
     });
 }
 
-// 6. Modal & 7. Cart (Remaining Logic)
+// Modal & Cart 
 async function openTreeModal(treeId) {
     const res = await fetch(`https://openapi.programming-hero.com/api/plant/${treeId}`);
     const data = await res.json();
