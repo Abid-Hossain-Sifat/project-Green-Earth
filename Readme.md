@@ -55,7 +55,7 @@ With a focus on simplicity, performance, and user-friendly design, the platform 
 ---
 ## 📸 Preview
 
-<img src="https://ibb.co.com/SDFMq4TW">
+<img src="https://i.ibb.co.com/WNmMS49q/screencapture-abid-hossain-sifat-github-io-project-Green-Earth-2026-04-07-23-49-43.png">
 <br />
 
 ---
